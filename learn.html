@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn | CodeMastery</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/editor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body style="overflow: hidden;"> <!-- Prevent body scroll on editor page -->
+
+  <nav class="navbar" style="padding: 0.5rem 2rem; background: var(--bg-surface); border-bottom: 1px solid var(--border-glass);">
+    <a href="dashboard.html" class="nav-brand" style="font-size: 1.25rem;">
+      <i class="fa-solid fa-arrow-left" style="font-size: 1rem; margin-right: 0.5rem; color: var(--text-secondary);"></i>
+      <i class="fa-solid fa-code"></i> CodeMastery
+    </a>
+    <div style="display: flex; align-items: center; gap: 1rem;">
+      <span id="course-title" style="font-weight: 500; color: var(--text-secondary);">Loading Course...</span>
+      <div class="progress-container" style="width: 150px; margin: 0; background: rgba(0,0,0,0.5);">
+        <div class="progress-bar" id="lesson-progress-bar" style="width: 0%;"></div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="split-layout">
+    
+    <!-- Left Pane: Theory -->
+    <div class="pane pane-left">
+      <div class="theory-header">
+        <h3 id="lesson-title">Lesson Title</h3>
+        <span class="badge" id="lesson-counter">1 / 5</span>
+      </div>
+      
+      <div class="theory-content" id="lesson-theory">
+        <!-- Content injected dynamically -->
+        <h2>Loading content...</h2>
+        <div class="spinner"></div>
+      </div>
+      
+      <div style="padding: 1.5rem; border-top: 1px solid var(--border-glass); background: rgba(255,255,255,0.02); display: flex; justify-content: space-between;">
+        <button class="btn btn-outline" id="btn-prev" disabled><i class="fa-solid fa-chevron-left"></i> Previous</button>
+        <button class="btn btn-primary" id="btn-next" disabled>Next Lesson <i class="fa-solid fa-chevron-right"></i></button>
+      </div>
+    </div>
+
+    <!-- Right Pane: Practical Editor -->
+    <div class="pane pane-right">
+      <div class="editor-toolbar">
+        <div class="tab" id="editor-tab">
+          <i class="fa-brands fa-js" style="color: #f7df1e;"></i> <span>script.js</span>
+        </div>
+        <div>
+          <button class="btn btn-primary" id="btn-run" style="padding: 0.4rem 1rem; border-radius: var(--radius-sm);">
+            <i class="fa-solid fa-play"></i> Run Code
+          </button>
+        </div>
+      </div>
+      
+      <!-- Ace Editor Container -->
+      <div id="code-editor"></div>
+
+      <!-- Lower Console / Preview Output -->
+      <div class="console-pane" id="output-pane">
+        <div class="console-header">
+          <span><i class="fa-solid fa-terminal"></i> root@codemastery: ~</span>
+          <span style="font-size: 0.75rem; cursor: pointer; color: var(--text-muted);" id="btn-clear-console">clear</span>
+        </div>
+        
+        <!-- Raw text console for JS -->
+        <div class="console-output" id="console-output"></div>
+        
+        <!-- Iframe for HTML/CSS -->
+        <iframe id="html-preview" title="HTML Output Preview"></iframe>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.7/ace.js"></script>
+  <script src="script/auth.js"></script>
+  <script src="data/courses.js"></script>
+  <script src="script/editor.js"></script>
+</body>
+</html>

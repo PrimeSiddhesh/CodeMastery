@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | CodeMastery</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="styles/dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="bg-mesh"></div>
+  
+  <nav class="navbar glass-panel" style="border-radius: 0; border-left: none; border-right: none; border-top: none;">
+    <a href="index.html" class="nav-brand">
+      <i class="fa-solid fa-code"></i> CodeMastery
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html" style="color: white; font-weight: 500;">Dashboard</a>
+      <a href="#" onclick="logout()" class="btn btn-outline" style="padding: 0.5rem 1rem;">Logout <i class="fa-solid fa-power-off"></i></a>
+    </div>
+  </nav>
+
+  <div class="dashboard-container animate-fade-in" style="animation-delay: 0.1s;">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="user-profile-card glass-panel">
+        <div class="avatar" id="user-avatar">A</div>
+        <div class="user-info">
+          <h2 id="user-name">Loading...</h2>
+          <p id="user-email">loading@user.com</p>
+        </div>
+      </div>
+      
+      <div class="stats-card glass-panel">
+        <h3 style="margin-bottom: 1.5rem; font-size: 1.1rem;">My Progress</h3>
+        
+        <div class="stat-item">
+          <span style="color: var(--text-secondary);">Courses Enrolled</span>
+          <strong id="stat-enrolled">2</strong>
+        </div>
+        <div class="stat-item">
+          <span style="color: var(--text-secondary);">Total Lessons Completed</span>
+          <strong id="stat-completed" style="color: var(--success);">0</strong>
+        </div>
+        <div class="stat-item">
+          <span style="color: var(--text-secondary);">Global Rank</span>
+          <strong style="color: var(--accent-blue);">#4092</strong>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="section-header">
+        <h2>Continue Learning</h2>
+      </div>
+      
+      <div class="course-grid">
+        
+        <!-- JavaScript Course Card -->
+        <div class="course-card glass-panel">
+          <div class="course-header">
+            <i class="fa-brands fa-js course-icon" style="color: #f7df1e;"></i>
+            <h3 class="course-title">JavaScript Fundamentals</h3>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; flex: 1;">
+            Master core JS including variables, logic, functions, DOM manipulation, and side-by-side editing.
+          </p>
+          
+          <div class="progress-text" id="js-progress-text">0% Completed</div>
+          <div class="progress-container">
+            <div class="progress-bar" id="js-progress-bar" style="width: 0%;"></div>
+          </div>
+          
+          <a href="learn.html?course=js" class="btn btn-primary" style="width: 100%; justify-content: center;">
+            <i class="fa-solid fa-play"></i> Resume Course
+          </a>
+        </div>
+
+        <!-- HTML/CSS Course Card -->
+        <div class="course-card glass-panel">
+          <div class="course-header">
+            <div style="display: flex; gap: 0.25rem;">
+              <i class="fa-brands fa-html5 course-icon" style="color: #e34f26;"></i>
+              <i class="fa-brands fa-css3-alt course-icon" style="color: #1572b6;"></i>
+            </div>
+            <h3 class="course-title">HTML & CSS UI Design</h3>
+          </div>
+          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; flex: 1;">
+            Build perfect structure and stunning styles.
+          </p>
+          
+          <div class="progress-text" id="html-progress-text">0% Completed</div>
+          <div class="progress-container">
+            <div class="progress-bar" id="html-progress-bar" style="width: 0%;"></div>
+          </div>
+          
+          <a href="learn.html?course=html" class="btn btn-primary" style="width: 100%; justify-content: center; background: rgba(255,255,255,0.05); color: white; border: 1px solid var(--border-glass)">
+            <i class="fa-solid fa-play"></i> Start Course
+          </a>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="script/auth.js"></script>
+  <script src="script/progress.js"></script>
+</body>
+</html>

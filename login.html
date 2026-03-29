@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | CodeMastery</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    .auth-container {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    
+    .auth-card {
+      width: 100%;
+      max-width: 420px;
+      padding: 3rem;
+      text-align: center;
+    }
+    
+    .auth-title {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .auth-subtitle {
+      color: var(--text-secondary);
+      margin-bottom: 2.5rem;
+    }
+    
+    .auth-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      text-align: left;
+    }
+    
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    
+    .form-group label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+    
+    .auth-error {
+      color: var(--danger);
+      font-size: 0.85rem;
+      margin-top: 0.5rem;
+      display: none;
+      text-align: center;
+    }
+
+    .auth-switch {
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+    }
+    
+    .auth-switch a {
+      color: var(--accent-blue);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .auth-switch a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-mesh"></div>
+  
+  <nav class="navbar" style="position: absolute; width: 100%; border-bottom: none;">
+    <a href="index.html" class="nav-brand">
+      <i class="fa-solid fa-code"></i> CodeMastery
+    </a>
+  </nav>
+
+  <div class="auth-container animate-fade-in">
+    <div class="auth-card glass-panel" id="login-view">
+      <h1 class="auth-title">Welcome Back</h1>
+      <p class="auth-subtitle">Continue your coding journey</p>
+      
+      <form class="auth-form" id="login-form">
+        <div class="form-group">
+          <label for="login-email">Email Address</label>
+          <input type="email" id="login-email" class="input-field" placeholder="hacker@codemastery.dev" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="login-password">Password</label>
+          <input type="password" id="login-password" class="input-field" placeholder="••••••••" required>
+        </div>
+        
+        <div class="auth-error" id="login-error">Invalid credentials</div>
+        
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
+          <i class="fa-solid fa-right-to-bracket"></i> Sign In
+        </button>
+      </form>
+      
+      <p class="auth-switch">Don't have an account? <a href="#" id="switch-to-register">Sign up for free</a></p>
+    </div>
+
+    <!-- Register View (Hidden by default) -->
+    <div class="auth-card glass-panel" id="register-view" style="display: none;">
+      <h1 class="auth-title">Create Account</h1>
+      <p class="auth-subtitle">Join the developer revolution</p>
+      
+      <form class="auth-form" id="register-form">
+        <div class="form-group">
+          <label for="reg-name">Full Name</label>
+          <input type="text" id="reg-name" class="input-field" placeholder="John Doe" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">Email Address</label>
+          <input type="email" id="reg-email" class="input-field" placeholder="hacker@codemastery.dev" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="reg-password">Password</label>
+          <input type="password" id="reg-password" class="input-field" placeholder="Create a strong password" required>
+        </div>
+        
+        <div class="auth-error" id="reg-error"></div>
+        
+        <button type="submit" class="btn btn-primary" style="margin-top: 1rem; width: 100%; justify-content: center;">
+          <i class="fa-solid fa-user-plus"></i> Initialize Account
+        </button>
+      </form>
+      
+      <p class="auth-switch">Already registered? <a href="#" id="switch-to-login">Sign in</a></p>
+    </div>
+  </div>
+
+  <script src="script/auth.js"></script>
+</body>
+</html>

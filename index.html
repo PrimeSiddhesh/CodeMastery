@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeMastery | Learn Programming Intuitively</title>
+  <link rel="stylesheet" href="styles/theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    /* Hero Section Specific Styles */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 80px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 2rem;
+      z-index: 10;
+    }
+    
+    .hero-title {
+      font-size: clamp(3rem, 8vw, 5rem);
+      line-height: 1.1;
+      margin-bottom: 1.5rem;
+      max-width: 900px;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 2.5rem;
+    }
+    
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+    }
+    
+    .course-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 5rem;
+      width: 100%;
+      max-width: 1200px;
+    }
+    
+    .course-card {
+      padding: 2rem;
+      text-align: left;
+      transition: var(--transition-smooth);
+      transform: translateY(0);
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    .course-card:hover {
+      transform: translateY(-10px);
+      border-color: var(--accent-blue);
+      box-shadow: var(--glow-primary);
+    }
+    
+    .course-icon {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+      display: inline-block;
+    }
+    
+    .icon-js { color: #f7df1e; }
+    .icon-html { color: #e34f26; }
+    .icon-css { color: #1572b6; }
+    .icon-python { color: #3776ab; }
+  </style>
+</head>
+<body>
+
+  <!-- Background Decorative Mesh -->
+  <div class="bg-mesh"></div>
+
+  <!-- Navigation -->
+  <nav class="navbar glass-panel animate-fade-in" style="border-radius: 0; border-left: none; border-right: none; border-top: none;">
+    <a href="index.html" class="nav-brand">
+      <i class="fa-solid fa-code"></i> CodeMastery
+    </a>
+    <div class="nav-links">
+      <a href="#courses">Courses</a>
+      <a href="login.html" class="btn btn-outline" style="padding: 0.5rem 1rem;">Sign In</a>
+      <a href="login.html" class="btn btn-primary" style="padding: 0.5rem 1rem;">Start Free</a>
+    </div>
+  </nav>
+
+  <!-- Main Hero -->
+  <main class="hero animate-fade-in" style="animation-delay: 0.1s;">
+    <span class="badge badge-new" style="margin-bottom: 1.5rem;">&#10024; The Future of Learning</span>
+    <h1 class="hero-title">Master Coding with <br> <span class="text-gradient">Interactive Playgrounds</span></h1>
+    <p class="hero-subtitle">Learn HTML, CSS, JavaScript, and more with our state-of-the-art side-by-side execution environments. No setup required.</p>
+    
+    <div class="hero-buttons">
+      <a href="login.html" class="btn btn-primary btn-lg"><i class="fa-solid fa-rocket"></i> Start Coding Now</a>
+      <a href="#courses" class="btn btn-outline btn-lg"><i class="fa-solid fa-compass"></i> Explore Catalog</a>
+    </div>
+
+    <!-- Course Grid Preview -->
+    <div id="courses" class="course-grid">
+      <a href="login.html" class="course-card glass-panel">
+        <i class="fa-brands fa-js course-icon icon-js"></i>
+        <h3>JavaScript Fundamentals</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Master the web's programming language. Variables, functions, DOM manipulation, and more.</p>
+        <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500;">
+          Start Course <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+      
+      <a href="login.html" class="course-card glass-panel">
+        <div style="display: flex; gap: 0.5rem;">
+          <i class="fa-brands fa-html5 course-icon icon-html"></i>
+          <i class="fa-brands fa-css3-alt course-icon icon-css"></i>
+        </div>
+        <h3>HTML & CSS Design</h3>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Build stunning, responsive websites from scratch using flexbox, grid, and animations.</p>
+        <div style="margin-top: 1.5rem; display: flex; align-items: center; gap: 0.5rem; color: var(--accent-blue); font-weight: 500;">
+          Start Course <i class="fa-solid fa-arrow-right"></i>
+        </div>
+      </a>
+      
+      <div class="course-card glass-panel" style="opacity: 0.7; cursor: not-allowed;">
+        <i class="fa-brands fa-python course-icon icon-python"></i>
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+           <h3>Python Bootcamps</h3>
+           <span class="badge" style="background: rgba(255,255,255,0.1);">Coming Soon</span>
+        </div>
+        <p style="color: var(--text-secondary); margin-top: 0.5rem;">Data structures, algorithms, and backend dev.</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="script/app.js"></script>
+</body>
+</html>

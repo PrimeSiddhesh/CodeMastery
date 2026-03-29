@@ -1,0 +1,159 @@
+/* styles/editor.css */
+
+.split-layout {
+  display: flex;
+  height: calc(100vh - 65px); /* Minus navbar approx */
+  width: 100vw;
+  overflow: hidden;
+}
+
+.pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+}
+
+.pane-left {
+  border-right: 1px solid var(--border-glass);
+  background: var(--bg-base);
+  min-width: 300px;
+  max-width: 600px;
+}
+
+.pane-right {
+  flex: 2;
+  background: var(--bg-surface);
+  min-width: 400px;
+}
+
+/* Theory Pane */
+.theory-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.theory-content {
+  padding: 1.5rem;
+  overflow-y: auto;
+  flex: 1;
+}
+
+.theory-content h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.theory-content p {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+
+.theory-content code {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.2rem 0.4rem;
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85em;
+  color: var(--accent-blue);
+}
+
+.info-box {
+  background: rgba(59, 130, 246, 0.1);
+  border-left: 4px solid var(--accent-blue);
+  padding: 1rem;
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  margin: 1.5rem 0;
+  color: var(--text-primary);
+}
+
+/* Editor Toolbar */
+.editor-toolbar {
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--border-glass);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tab {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Code Editor container (for Ace) */
+#code-editor {
+  flex: 1;
+  width: 100%;
+  font-family: 'Fira Code', monospace !important;
+  font-size: 14px;
+}
+
+/* Output Console Pane */
+.console-pane {
+  height: 30%;
+  min-height: 150px;
+  background: #000;
+  border-top: 1px solid var(--border-glass);
+  display: flex;
+  flex-direction: column;
+}
+
+.console-header {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: flex;
+  justify-content: space-between;
+}
+
+.console-output {
+  padding: 1rem;
+  font-family: 'Fira Code', monospace;
+  color: #a3be8c; /* Greenish success tone */
+  font-size: 0.9rem;
+  overflow-y: auto;
+  flex: 1;
+  white-space: pre-wrap;
+}
+
+.console-error {
+  color: #bf616a; /* Reddish error tone */
+}
+
+/* iframe for HTML execution */
+#html-preview {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: white;
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .split-layout {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .pane {
+    height: 50vh;
+    flex: none;
+  }
+}
